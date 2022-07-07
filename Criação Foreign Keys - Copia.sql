@@ -50,11 +50,23 @@ login_cadastro varchar(15) NOT NULL
 
 
 
-ALTER TABLE TURMAS
+ALTER TABLE Turmas
 ADD CONSTRAINT fk_id_aluno FOREIGN KEY (id_aluno) REFERENCES Alunos (id_aluno);
 
 ALTER TABLE Turmas
 ADD CONSTRAINT fk_id_curso FOREIGN KEY (id_curso) REFERENCES Cursos (id_curso);
+
+ALTER TABLE Registro_Presenca
+ADD CONSTRAINT fk_id_aluno_presenca  FOREIGN KEY (id_aluno) REFERENCES Alunos (id_aluno);
+
+ALTER TABLE Registro_Presenca
+ADD CONSTRAINT fk_id_situacao_presenca FOREIGN KEY (id_situacao) REFERENCES Situacao (id_situacao);
+
+--Erro na criação
+ALTER TABLE Registro_Presenca
+ADD CONSTRAINT fk_id_turma_presenca FOREIGN KEY (id_turma) REFERENCES Turmas (id_tuma);
+
+
 
 
 
